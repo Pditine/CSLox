@@ -1,0 +1,123 @@
+var a = 1;
+var b = -3;
+a = -2;
+print a + b;
+
+var a = "global a"; 
+var b = "global b"; 
+var c = "global c"; 
+{ 
+    var a = "outer a"; 
+    var b = "outer b"; 
+    { 
+        var a = "inner a"; 
+        print a; 
+        print b; 
+        print c; 
+    } 
+    print a; 
+    print b; 
+    print c; 
+} 
+print a; 
+print b; 
+print c;
+
+if (1 > 2 and 4 < 7)
+{
+    print "true";
+}
+else
+{
+    print "false";
+}
+
+print "hi" or 2;
+print nil or "yes";
+print 1 and "yes";
+print nil and "yes";
+
+for (var i = 0; i < 5; i = i + 1)
+{
+    print i + 1;
+}
+
+fun add(a, b) {
+    print a + b;
+}
+
+print add;
+add(1, 2);
+
+fun fib(n) {
+    if (n <= 1) return n;
+    return fib(n - 2) + fib(n - 1);
+}
+
+for (var i = 0; i < 20; i = i + 1) {
+    print fib(i); 
+}
+
+fun makeCounter() { 
+var i = 0; 
+fun count() { 
+i = i + 1; 
+print i; 
+  } 
+return count; 
+} 
+var counter = makeCounter(); 
+counter();
+counter();
+
+var a = "global"; 
+{
+    fun showA() {
+        print a;
+    }
+    showA();
+    var a = "block";
+    showA();
+}
+
+// var a = "outer"; 
+// { 
+//     var a = a; 
+// } 
+
+class DevonshireCream { 
+    init(other)
+    {
+        this.other = other;
+    }
+    serveOn() {  
+        return "Scones and " + this.other;
+    } 
+}
+
+var instance = DevonshireCream("bread");
+instance.a = 1;
+print DevonshireCream;
+print instance;
+print instance.a;
+
+instance.a = 2;
+print instance.a;
+print instance.serveOn();
+instance.other = "Cakes";
+print instance.serveOn();
+
+class Doughnut {
+  cook() {
+    print "Fry until golden brown.";
+  }
+}
+
+class BostonCream < Doughnut {
+  cook() {
+    super.cook();
+    print "Pipe full of custard and coat with chocolate.";
+  }
+}
+
+BostonCream().cook();
